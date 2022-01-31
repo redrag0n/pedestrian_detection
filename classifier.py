@@ -121,5 +121,6 @@ class Classifier:
     @staticmethod
     def load(input_path):
         device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
+        #device = torch.device('cpu')
         model = torch.load(input_path, device)
         return Classifier(model=model)
